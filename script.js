@@ -14,9 +14,15 @@ const next = document.querySelector(".next");
 i = 0;
 
 function ActiveSlide(n) {
-  for (slide of slides) slide.classList.remove("active");
-  slides[n].classList.add("active");
+  slides.forEach((slide, index) => {
+    if (index === n) {
+      slide.classList.add("active");
+    } else {
+      slide.classList.remove("active");
+    }
+  });
 }
+
 
 // function for next btn
 next.addEventListener("click", function () {
